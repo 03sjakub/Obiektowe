@@ -1,6 +1,7 @@
 #ifndef ZLAB03_H
 #define ZLAB03_H
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -26,7 +27,13 @@ class Prostokat{
 
         std::string doTekstu();
 
+        Prostokat & operaor++(int);
+        bool operator!(){return czyPoprawny();}
+
 };
+
+std::ostream& operator<<(std::ostream & strumien, Prostokat & prostokat);
+std::istream& operator>>(std::ostream & strumien, Prostokat & prostokat);
 #endif //ZLAB03_H
 
 //void drukujOrganizm(const Organizm & o){

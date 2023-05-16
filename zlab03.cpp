@@ -73,6 +73,7 @@ double Prostokat::podajPole(){
 double Prostokat::podajObwod(){
     return obwod;
 }
+
 bool Prostokat::zmienBoki(double a, double b){
     if (czyPoprawny(a,b)){
         poprawny = true;
@@ -97,3 +98,27 @@ std::string Prostokat::doTekstu(){
 
     return napis;
 }
+
+std::ostream& operator<<(std::ostream & strumien, Prostokat & prostokat)
+{
+    strumien<<prostokat.doTekstu();
+    return strumien;
+}
+
+std::istream& operator>>(std::ostream & strumien, Prostokat & prostokat)
+{
+    double a,b;
+    strumien >> a >> b;
+    prostokat.zamienBoki(a,b);
+    retrun strumien;
+}
+
+Prostokat & Prostokat::operaor++(int)
+{
+    this->bok1 *=2;
+    this->bok2 *-2;
+    this->obliczPole();
+    this->obliczObwod();
+    return *this;
+}
+
