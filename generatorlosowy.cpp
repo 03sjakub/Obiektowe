@@ -5,7 +5,8 @@
 
 std::random_device GeneratorLosowy::device;
 
-unsigned short GeneratorLosowy::losujPomiedzy (unsigned short min, unsigned short max)
+unsigned short GeneratorLosowy::losujPomiedzy
+    (unsigned short min, unsigned short max)
 {
     if(min>max)
     {
@@ -28,7 +29,7 @@ long GeneratorLosowy::losujPomiedzy(long min,long max)
         max=t;
     }
 
-    std::uniform_int_distribution<long>dist(min,max);
+    std::uniform_int_distribution<long> dist(min,max);
     return dist(GeneratorLosowy::device);
 }
 

@@ -3,8 +3,10 @@
 #include <string>
 #include <map>
 #include <set>
+#include <algorithm>
 #include "zlab10.h"
 #include "ustawienia.h"
+#include "generatorlosowy.h"
 
 void ZLab10::wektor()
 {
@@ -22,21 +24,21 @@ void ZLab10::wektor()
     //Próba zapisu poza granicą
     for(unsigned long i=5;i<10;i++) wektor[i]=3.2;
     std::cout<<"Rozmiar wektora: "<<wektor.size()<<std::endl;
-    for(double d: wektor ) std::cout<<d<<" ";
+    for(double d : wektor ) std::cout<<d<<" ";
     std::cout<<std::endl<<std::endl;
 
     //Zwiększenie rozmiaru
     wektor.resize(12);
     for(unsigned long i=5;i<10;i++) wektor[i]=3.2;
     std::cout<<"Rozmiar wektora: "<<wektor.size()<<std::endl;
-    for(double d: wektor ) std::cout<<d<<" ";
+    for(double d : wektor ) std::cout<<d<<" ";
     std::cout<<std::endl<<std::endl;
 
     //Zapis przy użyciu zwykłej pętli
     for(unsigned long i=0;i<wektor.size();i++)
         wektor[i]=i;
     std::cout<<"Rozmiar wektora: "<<wektor.size()<<std::endl;
-    for(double d: wektor ) std::cout<<d<<" ";
+    for(double d : wektor ) std::cout<<d<<" ";
     std::cout<<std::endl<<std::endl;
 
     //Zapis przy użyciu pętli zakresowej
@@ -58,7 +60,7 @@ void ZLab10::wektor_sortowanie()
 
     wektor.resize(13);
 
-    for(int& j: wektor) j= GEN::losujOdZeraDo(20);
+    for(int& j: wektor ) j= GEN::losujOdZeraDo(20);
 
     std::cout<<"Wektor wygenerowany"<<std::endl;
     for(auto j : wektor) std::cout<<j<<" ";
@@ -70,7 +72,7 @@ void ZLab10::wektor_sortowanie()
     std::cout<<std::endl<<std::endl;
 
     std::cout<<"Wekor pomieszany"<<std::endl;
-    random_shuffle(wektor.begin(), wektor.end(), GEN::losujOdZeraDo);
+    std::random_shuffle(wektor.begin(), wektor.end(), GEN::losujOdZeraDo(20));
 
     for(auto j: wektor) std::cout<< j<< " ";
     std::cout<<std::endl<<std::endl;

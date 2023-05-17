@@ -2,9 +2,6 @@
 #ifndef ZLAB10_H
 #define ZLAB10_H
 
-
-
-
 class ZLab10
 {
 public:
