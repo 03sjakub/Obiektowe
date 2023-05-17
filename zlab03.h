@@ -23,11 +23,11 @@ class Prostokat{
         const string &jakaNazwa();
         double podajPole();
         double podajObwod();
-        bool zmienBoki(double a, double b);
+        bool zamienBoki(double a, double b);
 
         std::string doTekstu();
 
-        Prostokat & operaor++(int);
+        Prostokat & operator++(int);
         bool operator!(){return czyPoprawny();}
 
 };

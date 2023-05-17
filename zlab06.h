@@ -1,7 +1,7 @@
 #ifndef ZLAB06_H
 #define ZLAB06_H
 #include<iostream>
-#include <zlab03.h>
+#include "zlab03.h"
 
 class Kwadrat: public Prostokat
 {

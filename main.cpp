@@ -14,7 +14,7 @@ using namespace std;
 
 int maint()
 {
-    //Listing 10.6
+
     /*Prostokat p("Prostokat",2,3);
     Kwadrat k("Kwadrat",4);
     cout<<p<<endl;

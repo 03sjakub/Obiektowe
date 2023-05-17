@@ -77,7 +77,7 @@ void ZLab09::tablica2D(int w, int k)
     delete [] wskInt2D;
 }
 
-void Zlab09::referencja()
+void ZLab09::referencja()
 {
     std::cout<<"---> Referecje"<<std::endl;
 
@@ -104,7 +104,12 @@ void Zlab09::referencja()
     std::cout<<"A="<<A<<" B="<<B<<std::endl;
 
     Glon glon;
+    Glon &refGlon=glon;
 
-    std::cout<<"Rozmiary"<<std::endl<<"sizeof (int &"<<sizeof()
+    std::cout<<"Rozmiary"<<std::endl
+            <<"sizeof (int &)"<<sizeof(int &)<<std::endl
+               <<"sizeof (refInt)"<<sizeof(refInt)<<std::endl
+                 <<"sizeof (Glon &)"<<sizeof(Glon &)<<std::endl
+                   <<"sizeof (refGlon)"<<sizeof(refGlon)<<std::endl;
 
 }

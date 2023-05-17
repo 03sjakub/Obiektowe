@@ -21,6 +21,7 @@
 //{
 //    pole = bok1*bok2;
 //}
+
 #include "zlab03.h"
 #include <iostream>
 
@@ -74,7 +75,7 @@ double Prostokat::podajObwod(){
     return obwod;
 }
 
-bool Prostokat::zmienBoki(double a, double b){
+bool Prostokat::zamienBoki(double a, double b){
     if (czyPoprawny(a,b)){
         poprawny = true;
         bok1 = a;
@@ -105,15 +106,15 @@ std::ostream& operator<<(std::ostream & strumien, Prostokat & prostokat)
     return strumien;
 }
 
-std::istream& operator>>(std::ostream & strumien, Prostokat & prostokat)
+std::istream& operator>>(std::istream & strumien, Prostokat & prostokat)
 {
     double a,b;
     strumien >> a >> b;
     prostokat.zamienBoki(a,b);
-    retrun strumien;
+    return strumien;
 }
 
-Prostokat & Prostokat::operaor++(int)
+Prostokat & Prostokat::operator++(int)
 {
     this->bok1 *=2;
     this->bok2 *-2;

@@ -1,12 +1,14 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <map>
+#include <set>
 #include "zlab10.h"
 #include "ustawienia.h"
 
 void ZLab10::wektor()
 {
-    std::pmr::vector<double> wektor;
+    std::vector<double> wektor;
 
     wektor.push_back(2.3);
     wektor.push_back(4.5);
@@ -52,11 +54,11 @@ void ZLab10::wektor()
 
 void ZLab10::wektor_sortowanie()
 {
-    std::pmr::vector<int> wektor;
+    std::vector<int> wektor;
 
     wektor.resize(13);
 
-    for(int& j: wektor) j= GEN ::losujOdZeraDo(20);
+    for(int& j: wektor) j= GEN::losujOdZeraDo(20);
 
     std::cout<<"Wektor wygenerowany"<<std::endl;
     for(auto j : wektor) std::cout<<j<<" ";
@@ -77,12 +79,12 @@ void ZLab10::wektor_sortowanie()
 
 void ZLab10::zbior()
 {
-    set<std::string> imiona;
+    std::set<std::string> imiona;
     imiona.insert("Adam");
     imiona.insert("Ewa");
     imiona.insert("Maciek");
 
-    for(string s: imiona) std::cout<<s<<" ";
+    for(std::string s: imiona) std::cout<<s<<" ";
     std::cout<<std::endl<<std::endl;
 
     imiona.insert("Adam");
@@ -91,10 +93,10 @@ void ZLab10::zbior()
     imiona.insert("Beata");
     imiona.insert("Maciek");
 
-    for(string s: imiona) std::cout<<s<<" ";
+    for(std::string s: imiona) std::cout<<s<<" ";
     std::cout<<std::endl<<std::endl;
 
-    set<std::string>::iterator iter=imiona.begin();
+    std::set<std::string>::iterator iter=imiona.begin();
     while(iter != imiona.end())
     {
         std::cout<< *iter << std::endl;
@@ -104,21 +106,21 @@ void ZLab10::zbior()
 
 void ZLab10::mapa()
 {
-    map<char,double> pomiary;
+    std::map<char,double> pomiary;
 
-    pomiary.insert(pair<char,double>('A',20));
-    pomiary.insert(pair<char,double>('B',30));
-    pomiary.insert(pair<char,double>('C',50));
-    pomiary.insert(pair<char,double>('D',25));
-    pomiary.insert(pair<char,double>('A',20));
-    pomiary.insert(pair<char,double>('A',40));
+    pomiary.insert(std::pair<char,double>('A',20));
+    pomiary.insert(std::pair<char,double>('B',30));
+    pomiary.insert(std::pair<char,double>('C',50));
+    pomiary.insert(std::pair<char,double>('D',25));
+    pomiary.insert(std::pair<char,double>('A',20));
+    pomiary.insert(std::pair<char,double>('A',40));
 
     std::cout<<"Wyswietlenie mapy"<<std::endl;
     for(char c: {'A','B','C'})
         std::cout<<c<<"->"<<pomiary[c]<<std::endl;
 
     std::cout<<"Policz A -> "<<pomiary.count('A')<<std::endl;
-    pomiary.ersae('A');
+    pomiary.erase('A');
     std::cout<<"Wyswietlenie mapy"<<std::endl;
     for(char c: {'A','B','C'})
         std::cout<<c<<"->"<<pomiary[c]<<std::endl;
